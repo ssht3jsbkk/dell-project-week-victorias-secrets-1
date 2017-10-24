@@ -32,16 +32,16 @@ app.get(`/data`, function(req, res) {
 
 
 
-app.post('/companies', (req, res) => {
-  db.collection('companies').save(req.body, (err, result) => {
+app.post('/Company', (req, res) => {
+  db.collection('Company').save(req.body, (err, result) => {
     if (err) return console.log(err)
    console.log('saved to database')
     res.redirect('/')
   })
 })
 
-app.post('/comments', (req, res) => {
-  db.collection('comments').save(req.body, (err, result) => {
+app.post('/Notes', (req, res) => {
+  db.collection('Notes').save(req.body, (err, result) => {
     if (err) return console.log(err)
    console.log('saved to database')
     res.redirect('/')
