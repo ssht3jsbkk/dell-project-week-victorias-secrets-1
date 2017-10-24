@@ -5,10 +5,86 @@
     <title></title>
   </head>
   <body>
-    <form action="/companies" method="POST">
-      <input type="text" placeholder="name" name="name">
-      <input type="text" placeholder="quote" name="quote">
-      <button type="submit">Submit</button>
-    </form>
+    <form action="/Company" method="POST">
+    <fieldset>
+        <legend>Register Company</legend>
+      <input type="text" placeholder="Company Id" name="companyId"><br/></br/>
+      <input type="text" placeholder="Company name" name="companyName"><br/></br/>
+      <input type="date" placeholder="Date Added" name="dateAdded"><br/></br/>
+      <input type="text" placeholder="Surname" name="contactSurname"><br/></br/>
+      <input type="text" placeholder="First name" name="contactFirstname"><br/></br/>
+      <input type="email" placeholder="Email Address" name="emailAddress"><br/></br/>
+      <input type="phone" placeholder="Phone number" name="phoneNumber"><br/></br/>
+      <input type="Url" placeholder="Website address" name="websiteAddress"><br/></br/>
+      <input type="text" placeholder="Twitter" name="twitter"><br/></br/>
+    <label for="esparkHubLocation">Espark Hub Location</label>
+      <select name="esparkHubLocation">
+        <option>Belfast</option>
+        <option>Ayr</option>
+        <option>Glasgow</option>
+        <option>Edinburgh</option>
+        <option>Newcastle</option>
+        <option>Leeds</option>
+        <option>Manchester</option>
+        <option>Birmingham</option>
+        <option>Milton Keynes</option>
+        <option>Cardiff</option>
+        <option>Bristol</option>
+        <option>Brighton</option>
+        <option>London</option>
+      </select>
+      <br>
+    <label for="primaryMentorFocusArea">Primary Mentor Focus Area</label>
+      <select name="primaryMentorFocusArea">
+        <option>select</option>
+        <option>Application Development</option>
+        <option>Technology</option>
+        <option>Security</option>
+        <option>Sales and Marketing</option>
+        <option>Leverage Dell Ecosystem</option>
+      </select>
+      <br />
+      <label for="industrySector">Industry Sector</label>
+      <select name="industrySector">
+        <option>select</option>
+        <option>Arts</option>
+        <option>Lifestyle</option>
+        <option>Health</option>
+        <option>Ecommerce</option>
+        <option>Digital</option>
+        <option>Energy</option>
+        <option>Sports And Leisure</option>
+        <option>Charity</option>
+        <option>Retail</option>
+        <option>Manufacturing/Industrial</option>
+        <option>Technology</option>
+        <option>Tansport And Storage</option>
+        <option>Constructions and Real Estate</option>
+        <option>Financial Services</option>
+        <option>Food or Agribusiness</option>
+      </select>
+      <br>
+      <label for="salesDistribution">Sales Distribution</label>
+      <input type="radio" name="salesDistribution" value="B2B" />B2B
+      <input type="radio" name="salesDistribution" value="B2C"  />B2C
+      <input type="radio" name="salesDistribution" value="Both" />BOTH
+      <br />
+      <label for="stage">Stage</label>
+      <select name="stage">
+        <option>select</option>
+        <option>Sprint</option>
+        <option>Enable</option>
+        <option>Grow</option>
+        <option>Scale</option>
+        <option>Alumni</option>
+      </select>
+      <br />
+      <label name="outstandingActions">Outstanding Action</label>
+      <input type="radio" name="outstandingAction" value="Yes" />Yes
+      <input type="radio" name="OutstandingAction" value="No"  />No
+
+     <button type="submit">Add new company</button>
+   </fieldset>
+   </form>
   </body>
 </html>

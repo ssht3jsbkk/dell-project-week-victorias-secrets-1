@@ -3,12 +3,12 @@ const mongoose = require("mongoose");
 
 
 const userSchema = {
-  "First name": String,
-  "Surname": String,
-  "Email": String,
-  "Phone": Number,
-  "Focus Area": String,
-  "Espark hub location": String
+  firstName: String,
+  surname: String,
+  email: String,
+  phone: Number,
+  focusArea: String,
+  esparkHubLocation: String
 }
 var Users = mongoose.model('User', mongoose.Schema(userSchema));
 
