@@ -10,6 +10,6 @@ const userSchema = {
   focusArea: String,
   esparkHubLocation: String
 }
-var Users = mongoose.model('User', mongoose.Schema(userSchema));
+var Users = mongoose.model('Users', mongoose.Schema(userSchema));
 
-module.exports = users;
+module.exports = Users;
