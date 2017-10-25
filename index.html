@@ -12,6 +12,7 @@
 <body>
   <form action="/Company" method="POST">
     <fieldset>
+
       <legend>Register Company</legend>
       <input type="text" placeholder="Company Id" name="companyId"><br/>
       </br/>
@@ -65,12 +66,12 @@
         <option>Ecommerce</option>
         <option>Digital</option>
         <option>Energy</option>
-        <option>Sports And Leisure</option>
+        <option>Sports and Leisure</option>
         <option>Charity</option>
         <option>Retail</option>
         <option>Manufacturing/Industrial</option>
         <option>Technology</option>
-        <option>Transport And Storage</option>
+        <option>Transport and Storage</option>
         <option>Construction and Real Estate</option>
         <option>Financial Services</option>
         <option>Food or Agribusiness</option>
@@ -139,6 +140,16 @@
   <input type="submit" />
   </select>
   <div id="result"></div>
+
+ <br />
+    <form action="/Notes" method="POST">
+      <input type="date" placeholder="Comment Date" name ="commentDate" />Date Comment Added<br />
+      <textarea rows="4" cols="50" name="comment" placeholder ="Enter comment here..."></textarea><br />
+      <input type="string" placeholder="Action" name ="action" /><br />
+      <input type="string" placeholder="Company" name ="companyId" /><br />
+      <input type="string" placeholder="Mentor Name" name ="mentorName" /><br />
+      <button type="submit">Add new comment</button>
+    </form>
   <!--
   <script>
 
@@ -182,16 +193,7 @@
   }
 </script>-->
 
-    <br />
-    <form action="/Notes" method="POST">
-      <input type="number" placeholder="Comment ID" name ="commentId" /><br />
-      <input type="date" placeholder="Comment Date" name ="commentDate" />Date Comment Added<br />
-      <textarea rows="4" cols="50" name="comment" placeholder ="Enter comment here..."></textarea><br />
-      <input type="string" placeholder="Action" name ="action" /><br />
-      <input type="string" placeholder="Company" name ="companyId" /><br />
-      <input type="string" placeholder="Mentor Name" name ="mentorName" /><br />
-      <button type="submit">Add new comment</button>
-    </form>
+   
   </body>
 
 </html>
