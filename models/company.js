@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const location = ['Belfast', 'Ayr','Glasgow','Edingburgh', 'Newcastle','Leeds','Manchester','Birmingham','Milton Keynes', 'Cardiff','Bristol','Brighton','London']
 const area = ['Application Development','Technology','Security','Sales and Marketing','Leverage Dell Ecosystem']
-const sector = ['Arts','Lifestyle','Health','Ecommerce','Digital','Energy','Sports&Leisure','Charity','Retail','Manufacturing/Industrial','Technology','Transport&Storage','Construction&Real Estate','Financial Services','Food or Agribusiness']
+const sector = ['Arts','Lifestyle','Health','Ecommerce','Digital','Energy','Sports and Leisure','Charity','Retail','Manufacturing/Industrial','Technology','Transport and Storage','Construction and Real Estate','Financial Services','Food or Agribusiness']
 const sales = ['B2B','B2C','BOTH']
 const stage = ['Sprint','Enable','Grow','Scale','Alumni']
 const action = ['Yes','No']
