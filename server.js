@@ -35,12 +35,13 @@ app.get('/data', function(req, res) {
 
 
 
-app.post('/Company', (req, res) => {
+app.post('/Company', (req, res) => 
   console.log('REQ BODY:')
   console.log(req.body)
   const comp = new Company(req.body);
   console.log(comp);
   comp.save(req.body, (err, result) => {
+
     if (err) return console.log(err)
       console.log('saved to database')
     res.redirect('/')
@@ -50,6 +51,7 @@ app.post('/Company', (req, res) => {
 app.post('/Notes', (req, res) => {
   const note = new Note(req.body);
   note.save(req.body, (err, result) => {
+
     if (err) return console.log(err)
    console.log('saved to database')
     res.redirect('/')
