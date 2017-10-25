@@ -24,12 +24,12 @@ app.use(bodyParser.urlencoded({extended: true}))
 // const session = require ('express-session');
 
 
-app.get(`/`, function(req, res) {
+app.get('/', function(req, res) {
   res.sendFile(__dirname + '/index.html');
 })
 
 
-app.get(`/data`, function(req, res) {
+app.get('/data', function(req, res) {
   res.send('data');
 })
 
@@ -65,4 +65,4 @@ app.listen(3000, () => {
 })
 // })
 //
-Company.find({}, (err, comps) => console.log(comps))
+Company.find({}, (err, company) => console.log(company))

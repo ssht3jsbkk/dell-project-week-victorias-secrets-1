@@ -1,6 +1,11 @@
 const mongoose = require("mongoose");
 
-const location = ['Belfast', 'Ayr','Glasglow','Edingburgh', 'Newcastle','Leeds','Manchester','Birmingham','Milton Keynes', 'Cardiff','Bristol','Brighton','London']
+const location = ['Belfast', 'Ayr','Glasgow','Edingburgh', 'Newcastle','Leeds','Manchester','Birmingham','Milton Keynes', 'Cardiff','Bristol','Brighton','London']
+const area = ['Application Development','Technology','Security','Sales and Marketing','Leverage Dell Ecosystem']
+const sector = ['Arts','Lifestyle','Health','Ecommerce','Digital','Energy','Sports&Leisure','Charity','Retail','Manufacturing/Industrial','Technology','Transport&Storage','Construction&Real Estate','Financial Services','Food or Agribusiness']
+const sales = ['B2B','B2C','BOTH']
+const stage = ['Sprint','Enable','Grow','Scale','Alumni']
+const action = ['Yes','No']
 
 const compSchema = {
   companyId: Number,
@@ -13,11 +18,11 @@ const compSchema = {
   websiteAddress: String,
   twitter: String,
   esparkHubLocation: {type: String, enum: location},
-  primaryMentorFocusArea: String,
-  industrySector: String,
-  salesDistribution: String,
-  stage: String,
-  actionOutstanding: String
+  primaryMentorFocusArea: {type: String, enum: area},
+  industrySector: {type: String, enum: sector},
+  salesDistribution: {type: String, enum: sales},
+  stage: {type: String, enum: stage},
+  actionOutstanding: {type: String, enum: action}
 }
 
 module.exports = mongoose.model('Company', mongoose.Schema(compSchema));
