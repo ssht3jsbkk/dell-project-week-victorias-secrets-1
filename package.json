@@ -12,6 +12,8 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "dotenv": "^4.0.0",
+    "esdoc": "^1.0.3",
+    "esdoc-standard-plugin": "^1.0.0",
     "eslint": "^4.9.0",
     "express": "^4.16.2",
     "hbs": "^4.0.1",
