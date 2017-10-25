@@ -14,6 +14,9 @@ const config = require('./config.js');
 // const cookieParser = require('cookie-parser');
 app.use(bodyParser.urlencoded({extended: true}))
 // const session = require ('express-session');
+
+app.use(express.static('public'))
+
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/index.html');
 })
