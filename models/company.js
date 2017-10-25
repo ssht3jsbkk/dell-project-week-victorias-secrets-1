@@ -8,7 +8,7 @@ const stage = ['Sprint','Enable','Grow','Scale','Alumni']
 const action = ['Yes','No']
 
 const compSchema = {
-  companyId: Number,
+  
   companyName: String,
   dateAdded: Date,
   contactSurname: String,
