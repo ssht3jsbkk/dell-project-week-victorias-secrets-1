@@ -14,6 +14,9 @@ const config = require('./config.js');
 // const cookieParser = require('cookie-parser');
 app.use(bodyParser.urlencoded({extended: true}))
 // const session = require ('express-session');
+
+app.use(express.static('public'))
+
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/index.html');
 })
@@ -32,7 +35,7 @@ app.post('/Company', (req, res) => {
   })
 })
 app.post('/Notes', (req, res) => {
-  const note = new Note(req.body);
+  const note = new Notes(req.body);
   note.save(req.body, (err, result) => {
     if (err) return console.log(err)
    console.log('saved to database')
