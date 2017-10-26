@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <form action="/company" method="POST">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <title></title>
+</head>
+
+<body>
+  <form action="/Company" method="POST">
     <fieldset>
-        <legend>Register Company</legend>
-      <input type="text" placeholder="Company name" name="companyName"><br/></br/>
-      <input type="date" placeholder="Date Added" name="dateAdded"><br/></br/>
-      <input type="text" placeholder="Surname" name="contactSurname"><br/></br/>
-      <input type="text" placeholder="First name" name="contactFirstname"><br/></br/>
-      <input type="email" placeholder="Email Address" name="emailAddress"><br/></br/>
-      <input type="phone" placeholder="Phone number" name="phoneNumber"><br/></br/>
-      <input type="Url" placeholder="Website address" name="websiteAddress"><br/></br/>
-      <input type="text" placeholder="Twitter" name="twitter"><br/></br/>
-    <label for="esparkHubLocation">Espark Hub Location</label>
+
+      <legend>Register Company</legend>
+      <input type="text" placeholder="Company Id" name="companyId"><br/>
+      </br/>
+      <input type="text" placeholder="Company name" name="companyName"><br/>
+      </br/>
+      <input type="date" placeholder="Date Added" name="dateAdded"><br/>
+      </br/>
+      <input type="text" placeholder="Surname" name="contactSurname"><br/>
+      </br/>
+      <input type="text" placeholder="First name" name="contactFirstname"><br/>
+      </br/>
+      <input type="email" placeholder="Email Address" name="emailAddress"><br/>
+      </br/>
+      <input type="phone" placeholder="Phone number" name="phoneNumber"><br/>
+      </br/>
+      <input type="Url" placeholder="Website address" name="websiteAddress"><br/>
+      </br/>
+      <input type="text" placeholder="Twitter" name="twitter"><br/>
+      </br/>
+      <label for="esparkHubLocation">Espark Hub Location</label>
       <select name="esparkHubLocation">
         <option>Belfast</option>
         <option>Ayr</option>
@@ -33,7 +49,7 @@
         <option>London</option>
       </select>
       <br>
-   <label for="primaryMentorFocusArea">Primary Mentor Focus Area</label>
+      <label for="primaryMentorFocusArea">Primary Mentor Focus Area</label>
       <select name="primaryMentorFocusArea">
         <option>Application Development</option>
         <option>Technology</option>
@@ -63,7 +79,7 @@
       <br>
       <label for="salesDistribution">Sales Distribution</label>
       <input type="radio" name="salesDistribution" value="B2B" />B2B
-      <input type="radio" name="salesDistribution" value="B2C"  />B2C
+      <input type="radio" name="salesDistribution" value="B2C" />B2C
       <input type="radio" name="salesDistribution" value="BOTH" />BOTH
       <br />
       <label for="stage">Stage</label>
@@ -77,15 +93,57 @@
       <br />
       <label name="outstandingAction">Outstanding Action</label>
       <input type="radio" name="outstandingAction" value="Yes" />Yes
-      <input type="radio" name="outstandingAction" value="No"  />No
+      <input type="radio" name="outstandingAction" value="No" />No
+      <br />
+      <button type="submit">Add new company</button>
+    </fieldset>
+  </form>
+  <br />
+  <br />
+  <br />
+  <form action="/Notes" method="POST">
+    <fieldset>
+    <legend>Visit Log</legend>
+    <input type="number" placeholder="Comment ID" name="commentId" /><br />
+    <input type="date" placeholder="Comment Date" name="commentDate" />Date Comment Added<br />
+    <textarea rows="4" cols="50" name="comment" placeholder="Enter comment here..."></textarea><br />
+    <input type="string" placeholder="Action" name="action" /><br />
+    <input type="string" placeholder="Company" name="companyId" /><br />
+    <input type="string" placeholder="Mentor Name" name="mentorName" /><br />
+    <button type="submit">Add new comment</button>
+  </fieldset>
+  </form>
+  <br>
+  <br>
+  <form action="/Users" method="POST">
+    <fieldset>
+      <legend>Mentors</legend>
+    <input type="string" placeholder="Name" name="mentorName" />Mentor Name<br />
+    <input type="email" placeholder="Email" name="email" />Email<br />
+    <input type="number" placeholder="Contact Number" name="phone" />Contact Number<br />
+    <input type="string" placeholder="Area" name="primaryMentorFocusArea" />Focus Area<br />
+    <input type="string" placeholder="Location" name="esparkHubLocation" />Location<br />
+    <button type="submit">Add new user</button>
+  </fieldset>
+  </form>
 
-     <button type="submit">Add new company</button>
-   </fieldset>
-</form>
-    <br />
-    <br />
-    <br />
-    <form action="/notes" method="POST">
+
+  <h2>Search engine</h2>
+  <select id="myselect" onchange="change_myselect(this.value)">
+  <option value="">Choose an option:</option>
+  <option value="companyName">Company</option>
+  <option value="esparkHubLocation">Location</option>
+  <option value="primaryMentorFocusArea">Focus Area</option>
+  <option value="industrySector">Sector</option>
+  <option value="salesDistribution">Sales</option>
+  <option value="stage">Stage</option>
+  <option value="actionOutstanding">Action Needed</option>
+  <input type="submit" />
+  </select>
+  <div id="result"></div>
+
+ <br />
+ 
       <input type="date" placeholder="Comment Date" name ="commentDate" />Date Comment Added<br />
       <textarea rows="4" cols="50" name="comment" placeholder ="Enter comment here..."></textarea><br />
       <input type="string" placeholder="Action" name ="action" /><br />
@@ -93,5 +151,50 @@
       <input type="string" placeholder="Mentor Name" name ="mentorName" /><br />
       <button type="submit">Add new comment</button>
     </form>
+  <!--
+  <script>
+
+  document.getElementById('myselect').addEventListener('submit', () => {
+    event.preventDefault();
+    var options = document.getElementById("options").value
+    //var url = ;${options}`
+    var data;
+
+    fetch(url)
+      .then(response => response.json())
+      .then(output => {data = output;
+
+
+        console.log(data);
+
+        document.getElementById("result").innerHTML= html
+      })
+      .catch(error => console.log('error is :'+error));
+    });
+
+   function change_myselect(sel) {
+    var obj, dbParam, xmlhttp, myObj, x, txt = "";
+    obj = { "table":sel, "limit":20 };
+    dbParam = JSON.stringify(obj);
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        myObj = JSON.parse(this.responseText);
+        txt += "<table border='1'>"
+        for (x in myObj) {
+          txt += "<tr><td>" + myObj[x].name + "</td></tr>";
+        }
+        txt += "</table>"
+        document.getElementById("demo").innerHTML = txt;
+      }
+    };
+    xmlhttp.open("POST", "json_demo_db_post.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("x=" + dbParam);
+  }
+</script>-->
+
+   
   </body>
+
 </html>

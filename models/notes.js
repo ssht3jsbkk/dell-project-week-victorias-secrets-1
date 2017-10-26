@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
 const notesSchema = {
-  commentId: Number,
+
   commentDate: Date,
   comment: String,
   action: String,
-  companyId: Number,
+  companyName: String,
   mentorName: String
 }
 
