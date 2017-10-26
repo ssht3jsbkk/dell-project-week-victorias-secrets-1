@@ -8,7 +8,9 @@ const userSchema = {
   email: String,
   phone: Number,
   focusArea: String,
-  esparkHubLocation: String
+  esparkHubLocation: String,
+  username: String,
+  password: String
 }
 var Users = mongoose.model('Users', mongoose.Schema(userSchema));
 
