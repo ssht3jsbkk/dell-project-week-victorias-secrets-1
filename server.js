@@ -17,6 +17,7 @@ var notes = require('./routes/notes');
 var users = require('./routes/users');
 
 app.use(bodyParser.urlencoded({extended: true}))
+app.use(express.static('public'))
 
 const requiredAuthentication = (req, res, next) =>  {
   if (req.session.isAuthenticated)  {
@@ -32,8 +33,25 @@ app.use((req, res, next) => {
 })
 
 
+
 app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/routes/logIn.html');
+});
+
+app.get('/main', function(req, res) {
+  res.sendFile(__dirname + '/routes/main.html');
+});
+app.get('/register', function(req, res) {
+  res.sendFile(__dirname + '/routes/register.html');
+});
+app.get('/search', function(req, res) {
+  res.sendFile(__dirname + '/routes/search.html');
+});
+app.get('/newCompany', function(req, res) {
+  res.sendFile(__dirname + '/routes/newCompany.html');
+});
+app.get('/addComment', function(req, res) {
+  res.sendFile(__dirname + '/routes/addComment.html');
 });
 
 app.use('/login', login);
@@ -42,9 +60,6 @@ app.use('/register', register);
 app.use('/companies', companies);
 app.use('/notes', notes);
 app.use('/users', users);
-
-
-
 
 app.listen(3000, () => {
   console.log('listening on 3000')

@@ -1,0 +1,96 @@
+
+body {
+  background-color: #808080;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  background-color: white:
+  }
+
+#logo {
+  background-color: white;
+}
+
+
+  #button {
+    background-color: white;
+    color: #007DB8;
+    border: 5px solid #007DB8;
+    border-radius: 3px;
+  }
+
+
+    #buttonReg {
+      background-color: white;
+      color: #007DB8;
+      border: 5px solid #007DB8;
+      border-radius: 3px;
+    }
+
+#mainBox {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+#mainBtn {
+  height: 17em;
+  background: #007DB8;
+  flex: 1;
+  min-width: 40%;
+  border: 5px solid #808080;
+  color: white;
+}
+@media (max-width: 700px) {
+  #mainBtn {
+    min-width: 33.33%;
+  }
+}
+@media (max-width: 400px) {
+  #mainBtn {
+    min-width: 50%;
+}
+}
+/*
+
+.button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+.button2 {
+    background-color: white;
+    color: #808080;
+    border: 3px solid #808080;
+    border-radius: 3px;
+}
+
+.button3 {
+    background-color: white;
+    color: #008774;
+    border: 2px solid #008774;
+    border-radius: 3px;
+}
+
+.button4 {
+    background-color: white;
+    color: #00AE9E;
+    border: 2px solid #00AE9E;
+}
+
+<button class="button button1">DELL BLUE</button>
+<button class="button button2">DELL GREY</button>
+<button class="button button3">PIVOTAL TEAL</button>
+<button class="button button4">PIVOTAL MINT</button>
