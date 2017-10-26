@@ -44,6 +44,8 @@ img {
   min-width: 40%;
   border: 5px solid #808080;
   color: white;
+  text-align: center;
+  line-height: 8em;
 }
 @media (max-width: 700px) {
   #mainBtn {
