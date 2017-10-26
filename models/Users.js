@@ -11,7 +11,7 @@ const userSchema = {
   esparkHubLocation: String
 }
 
-var users = mongoose.model('user', mongoose.Schema(userSchema));
+var users = mongoose.model('users', mongoose.Schema(userSchema));
 
 
-module.exports = Users;
+module.exports = users;

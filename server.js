@@ -14,11 +14,28 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 // const session = require ('express-session');
 
+
 app.use(express.static('public'))
 
 
 app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/routes/logIn.html');
+});
+
+app.get('/main', function(req, res) {
+  res.sendFile(__dirname + '/routes/main.html');
+});
+app.get('/register', function(req, res) {
+  res.sendFile(__dirname + '/routes/register.html');
+});
+app.get('/search', function(req, res) {
+  res.sendFile(__dirname + '/routes/search.html');
+});
+app.get('/newCompany', function(req, res) {
+  res.sendFile(__dirname + '/routes/newCompany.html');
+});
+app.get('/addComment', function(req, res) {
+  res.sendFile(__dirname + '/routes/addComment.html');
 });
 
 app.get('/Company', function(req, res) {
@@ -280,8 +297,8 @@ app.post('/Notes', (req, res) => {
     res.redirect('/')
   })
 })
-app.post('/Users', (req, res) => {
-  const user = new User(req.body);
+app.post('/users', (req, res) => {
+  const user = new user(req.body);
   note.save(req.body, (err, result) => {
     if (err)
       return console.log(err)
