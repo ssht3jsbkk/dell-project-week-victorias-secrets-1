@@ -9,7 +9,6 @@ const app = express();
 
 mongoose.connect('mongodb://Victoria\'s Secret\'s:Bootcamp1@ds127375.mlab.com:27375/dell_task');
 const config = require('./config.js');
-
 var login = require('./routes/loggingIn');
 var logout = require ('./routes/loggingOut');
 var register = require('./routes/registration');
@@ -36,13 +35,16 @@ app.use((req, res, next) => {
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/index.html');
 });
-// app.use('/api/users', requiredAuthentication, Users);
+
 app.use('/login', login);
 app.use('/logout', logout);
 app.use('/register', register);
 app.use('/companies', companies);
 app.use('/notes', notes);
 app.use('/users', users);
+
+
+
 
 app.listen(3000, () => {
   console.log('listening on 3000')
