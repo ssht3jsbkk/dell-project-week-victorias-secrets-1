@@ -5,7 +5,7 @@ var Users = require('../models/users.js');
 var pw = require('../libs/password.js');
 
 /* GET login page. */
-router.get('/', function(req, res, next) {
+router.get('/logout', function(req, res, next) {
   res.render('login', "You are in the zone!");
 });
 
