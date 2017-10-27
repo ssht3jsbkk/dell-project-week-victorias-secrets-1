@@ -16,25 +16,63 @@
 
   <img src="DellEMC_Logo_Hz_Blue_rgb.png" />
 </div>
-
+  <form>
   <h2>Search engine</h2>
-  <select id="myselect" onchange="change_myselect(this.value)">
-  <option value="">Choose an option:</option>
+  <!-- <select id="myselect" onchange="change_myselect(this.value)"> -->
+  <!-- <option value="">Choose an option:</option>
   <option value="companyName">Company</option>
   <option value="esparkHubLocation">Location</option>
   <option value="primaryMentorFocusArea">Focus Area</option>
   <option value="industrySector">Sector</option>
   <option value="salesDistribution">Sales</option>
   <option value="stage">Stage</option>
-  <option value="actionOutstanding">Action Needed</option>
-  <input type="submit" />
-  </select>
-  <div id="result"></div>
+  <option value="actionOutstanding">Action Needed</option> -->
+  <input id="input" type="text" name="socrates" />
+  <button id="search">Search</button>
+  <!-- </select> -->
+  <div id="result">
 
-  <br />
+  </div>
+  </form>
+    <script>
+      document.getElementById('search').addEventListener('click', function(event){
+        event.preventDefault();
+        const input = document.getElementById('input').value;
+        fetch('/companies/'+input)
+        .then(response => response.json())
+        .then(output => {
+          let toShow = output.map((result, index) => (`<div>
+              <h3><span>#${index}.</span>${result.companyName}</h3>
+              <p>
+              <span>${result.dateAdded}</span>
+              </p>
+              <span>${result.contactFirstname}</span> <span>${result.contactSurname}</span>
+              </p>
+              <p>
+                <span>${result.emailAddress}</span>
+              </p>
+              <p>
+                <span>${result.twitter}</span>
+              </p>
+              <p>
+                <span>${result.esparkHubLocation}</span>
+              </p>
+              <span>${result.phoneNumber}
+              </p>
+              </p>
+              <span>${result.industrySector}</span>
+              </p>
+              </p>
+              <span>${result.salesDistribution}</span>
+              </p>
+            </div>`
+          ));
+          document.getElementById('result').innerHTML = toShow.join('');
+          console.log(toShow);
+        });
+      })
 
-
-    </form>
+    </script>
 </body>
 
 </html>
