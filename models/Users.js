@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+const location = ['Belfast', 'Ayr','Glasgow','Edingburgh', 'Newcastle','Leeds','Manchester','Birmingham','Milton Keynes', 'Cardiff','Bristol','Brighton','London']
+const area = ['Application Development','Technology','Security','Sales and Marketing','Leverage Dell Ecosystem']
 
 
 const userSchema = {
@@ -7,8 +9,8 @@ const userSchema = {
   surname: String,
   email: String,
   phone: Number,
-  focusArea: String,
-  esparkHubLocation: String,
+  esparkHubLocation: {type: String, enum: location},
+  focusArea: {type: String, enum: area},
   username: String,
   password: String
 }

@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-var session = require ('express-session')
+//var session = require ('express-session')
 
 const bodyParser = require('body-parser');
 const PORT = 3000;
@@ -53,8 +53,11 @@ app.get('/search', function(req, res) {
 app.get('/newCompany', function(req, res) {
   res.sendFile(__dirname + '/routes/newCompany.html');
 });
-app.get('/addComment', function(req, res) {
-  res.sendFile(__dirname + '/routes/addComment.html');
+app.get('/addComments', function(req, res) {
+  res.sendFile(__dirname + '/routes/addComments.html');
+});
+app.get('/editCompany', function(req, res) {
+  res.sendFile(__dirname + '/routes/editCompany.html');
 });
 
 app.use('/login', login);
