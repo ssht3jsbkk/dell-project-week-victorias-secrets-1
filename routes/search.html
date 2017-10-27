@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <title></title>
+</head>
+
+<body>
+  <div id="logo"></div>
+  <div id="search-bg">
+  <form>
+  <h2>Search engine</h2>
+  <!-- <select id="myselect" onchange="change_myselect(this.value)"> -->
+  <!-- <option value="">Choose an option:</option>
+  <option value="companyName">Company</option>
+  <option value="esparkHubLocation">Location</option>
+  <option value="primaryMentorFocusArea">Focus Area</option>
+  <option value="industrySector">Sector</option>
+  <option value="salesDistribution">Sales</option>
+  <option value="stage">Stage</option>
+  <option value="actionOutstanding">Action Needed</option> -->
+  <input id="input" type="text" name="socrates" />
+  <button id="search">Search</button>
+  <!-- </select> -->
+  <div id="result">
+
+  </div>
+  </form>
+    <script>
+      document.getElementById('search').addEventListener('click', function(event){
+        event.preventDefault();
+        const input = document.getElementById('input').value;
+        fetch('/companies/'+input)
+        .then(response => response.json())
+        .then(output => {
+          let toShow = output.map((result, index) => (`<div>
+              <h3><span>#${index}.</span>${result.companyName}</h3>
+              <p>
+              <span>${result.dateAdded}</span>
+              </p>
+              <span>${result.contactFirstname}</span> <span>${result.contactSurname}</span>
+              </p>
+              <p>
+                <span>${result.emailAddress}</span>
+              </p>
+              <p>
+                <span>${result.twitter}</span>
+              </p>
+              <p>
+                <span>${result.esparkHubLocation}</span>
+              </p>
+              <span>${result.phoneNumber}
+              </p>
+              </p>
+              <span>${result.industrySector}</span>
+              </p>
+              </p>
+              <span>${result.salesDistribution}</span>
+              </p>
+            </div>`
+          ));
+          document.getElementById('result').innerHTML = toShow.join('');
+          console.log(toShow);
+        });
+      })
+    </script>
+    <a href="/main" id="buttonBack" onclick="click()">Back to Main Page</a>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <title></title>
+</head>
+
+<body>
+  <div id="logo"></div>
+</div>
+<div id="edit-comp-bg">
+
+  <form action="/Company" method="Patch">
+    <fieldset>
+
+      <legend>Update Company</legend>
+      <input type="text" placeholder="Company name" name="companyName"><br/>
+      </br/>
+      <input type="date" placeholder="Date Added" name="dateAdded"><br/>
+      </br/>
+      <input type="text" placeholder="Surname" name="contactSurname"><br/>
+      </br/>
+      <input type="text" placeholder="First name" name="contactFirstname"><br/>
+      </br/>
+      <input type="email" placeholder="Email Address" name="emailAddress"><br/>
+      </br/>
+      <input type="phone" placeholder="Phone number" name="phoneNumber"><br/>
+      </br/>
+      <input type="Url" placeholder="Website address" name="websiteAddress"><br/>
+      </br/>
+      <input type="text" placeholder="Twitter" name="twitter"><br/>
+      </br/>
+      <label for="esparkHubLocation">Espark Hub Location</label><br />
+      <select name="esparkHubLocation">
+        <option>Belfast</option>
+        <option>Ayr</option>
+        <option>Glasgow</option>
+        <option>Edinburgh</option>
+        <option>Newcastle</option>
+        <option>Leeds</option>
+        <option>Manchester</option>
+        <option>Birmingham</option>
+        <option>Milton Keynes</option>
+        <option>Cardiff</option>
+        <option>Bristol</option>
+        <option>Brighton</option>
+        <option>London</option>
+      </select>
+      <br>
+      <label for="primaryMentorFocusArea">Primary Mentor Focus Area</label><br />
+      <select name="primaryMentorFocusArea">
+        <option>Application Development</option>
+        <option>Technology</option>
+        <option>Security</option>
+        <option>Sales and Marketing</option>
+        <option>Leverage Dell Ecosystem</option>
+      </select>
+      <br />
+      <label for="industrySector">Industry Sector</label><br />
+      <select name="industrySector">
+        <option>Arts</option>
+        <option>Lifestyle</option>
+        <option>Health</option>
+        <option>Ecommerce</option>
+        <option>Digital</option>
+        <option>Energy</option>
+        <option>Sports and Leisure</option>
+        <option>Charity</option>
+        <option>Retail</option>
+        <option>Manufacturing/Industrial</option>
+        <option>Technology</option>
+        <option>Transport and Storage</option>
+        <option>Construction and Real Estate</option>
+        <option>Financial Services</option>
+        <option>Food or Agribusiness</option>
+      </select>
+      <br>
+      <label for="salesDistribution">Sales Distribution</label><br />
+      <input type="radio" name="salesDistribution" value="B2B" />B2B
+      <input type="radio" name="salesDistribution" value="B2C" />B2C
+      <input type="radio" name="salesDistribution" value="BOTH" />BOTH
+      <br />
+      <label for="stage">Stage</label><br />
+      <select name="stage">
+        <option>Sprint</option>
+        <option>Enable</option>
+        <option>Grow</option>
+        <option>Scale</option>
+        <option>Alumni</option>
+      </select>
+      <br />
+      <label name="outstandingAction">Outstanding Action</label><br />
+      <input type="radio" name="outstandingAction" value="Yes" />Yes
+      <input type="radio" name="outstandingAction" value="No" />No
+      <br />
+      <button id="button" type="submit">Amend Company Details</button>
+    </fieldset>
+  </form>
+  <a href="/main" id="buttonBack" onclick="click()">Back to Main Page</a>
+</div>
+</body>
+
+</html>
