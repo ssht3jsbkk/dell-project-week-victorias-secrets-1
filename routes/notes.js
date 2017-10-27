@@ -48,7 +48,7 @@ router.get('/:companyName', function(req, res) {
 })
 
 router.post('/', (req, res) => {
-  const note = new Notes(req.body); /*changes Note to Notes change back if doesnt work*/
+  const note = new Note(req.body);
   note.save(req.body, (err, result) => {
     if (err)
       return console.log(err)

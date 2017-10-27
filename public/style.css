@@ -1,122 +1,85 @@
+
 body {
-  /*background-color: #808080;*/
-  background-color: white;
+  background-color: #808080;
   text-align: center;
   font-family: 'Roboto', sans-serif;
   color: white;
 }
 
-
+img {
+  width: 100%;
+  height: auto;
+  background-color: white:
+  }
 
 #logo {
-  background-color: #007DB8;
-  background-image: URL(dellLogoWhite.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 50px;
-  max-height: 50px;
-  width: 100%;
+  background-color: white;
 }
 
-#button {
-  background-color: white;
-  color: #007DB8;
-  border: 5px solid #007DB8;
-  border-radius: 3px;
-}
 
-#buttonReg {
-  background-color: white;
-  color: #007DB8;
-  border: 5px solid #007DB8;
-  border-radius: 3px;
-}
+  #button {
+    background-color: white;
+    color: #007DB8;
+    border: 5px solid #007DB8;
+    border-radius: 3px;
+  }
+
+
+    #buttonReg {
+      background-color: white;
+      color: #007DB8;
+      border: 5px solid #007DB8;
+      border-radius: 3px;
+    }
 
 #mainBox {
   box-sizing: border-box;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
 }
-
-.mainBtn {
-  display: inherit;
-  /*height: 17em;*/
+#mainBtn {
+  height: 17em;
   background: #007DB8;
-  font-size: 40px;
   flex: 1;
   min-width: 40%;
   border: 5px solid #808080;
   color: white;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  width: 48vw;
-  padding: 3.4em;
-  margin: 25px;
-  border-radius: 60px;
-  transition: all .2s ease-in-out;
+  text-align: center;
+  line-height: 8em;
 }
-
-.mainBtn:hover {
-  transform: scale(1.1);
-  text-decoration: none;
-  color: white;
-}
-#new-comp-bg {
-  background: #B7295A;
-}#edit-comp-bg {
-  background: #42AEAF;
-}#search-bg {
-  background: #F2AF00;
-}#add-comment-bg {
-  background: #C1D82F;
-}
-#log-in-bg {
-  background: #808080;
-}
-
-#search:hover {
-  background: #F2AF00;
-}
-#new-company:hover {
-  background: #B7295A;
-}
-#add-comments:hover {
-  background: #C1D82F;
-}
-#edit-company:hover {
-  background: #42AEAF;
-}
-
 @media (max-width: 700px) {
-  .mainBtn {
+  #mainBtn {
     min-width: 33.33%;
   }
 }
-
 @media (max-width: 400px) {
-  .mainBtn {
+  #mainBtn {
     min-width: 50%;
-  }
+}
+}
+/*
+
+.button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 
-#buttonBack {
-  border-color: #007DB8;
-  background-color: white;
-  color: #007DB8;
-  border: 3px solid #007DB8;
-  border-radius: 3px;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+
+.button2 {
+    background-color: white;
+    color: #808080;
+    border: 3px solid #808080;
+    border-radius: 3px;
 }
 
-/*.button3 {
+.button3 {
     background-color: white;
     color: #008774;
     border: 2px solid #008774;

@@ -12,14 +12,16 @@
 </head>
 
 <body>
-  <div id="logo"></div>
-</div>
-<div id="edit-comp-bg">
+  <div id="logo">
 
+  <img src="DellEMC_Logo_Hz_Blue_rgb.png" />
+</div>
   <form action="/Company" method="Patch">
     <fieldset>
 
-      <legend>Update Company</legend>
+      <legend>Register Company</legend>
+      <input type="text" placeholder="Company Id" name="companyId"><br/>
+      </br/>
       <input type="text" placeholder="Company name" name="companyName"><br/>
       </br/>
       <input type="date" placeholder="Date Added" name="dateAdded"><br/>
@@ -102,8 +104,6 @@
       <button id="button" type="submit">Amend Company Details</button>
     </fieldset>
   </form>
-  <a href="/main" id="buttonBack" onclick="click()">Back to Main Page</a>
-</div>
 </body>
 
 </html>

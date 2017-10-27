@@ -12,12 +12,16 @@
 </head>
 
 <body>
-  <div id="logo"></div>
-  <div id="new-comp-bg"
+  <div id="logo">
+
+  <img src="DellEMC_Logo_Hz_Blue_rgb.png" />
+</div>
   <form action="/Company" method="POST">
     <fieldset>
 
       <legend>Register Company</legend>
+      <input type="text" placeholder="Company Id" name="companyId"><br/>
+      </br/>
       <input type="text" placeholder="Company name" name="companyName"><br/>
       </br/>
       <input type="date" placeholder="Date Added" name="dateAdded"><br/>
@@ -97,12 +101,9 @@
       <input type="radio" name="outstandingAction" value="Yes" />Yes
       <input type="radio" name="outstandingAction" value="No" />No
       <br />
-      <button id="button" type="submit">Add company</button>
+      <button id="button" type="submit">Add new company</button>
     </fieldset>
   </form>
-
-<a href="/main" id="buttonBack" onclick="click()">Back to Main Page</a>
-</div>
 </body>
 
 </html>
