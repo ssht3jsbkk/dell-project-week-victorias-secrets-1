@@ -8,6 +8,7 @@ const PORT = 3000;
 const app = express();
 
 mongoose.connect('mongodb://Victoria\'s Secret\'s:Bootcamp1@ds127375.mlab.com:27375/dell_task');
+
 const config = require('./config.js');
 var login = require('./routes/loggingIn');
 var logout = require ('./routes/loggingOut');
@@ -16,21 +17,23 @@ var companies = require('./routes/companies');
 var notes = require('./routes/notes');
 var users = require('./routes/users');
 
+var Company = require('./models/company');
+
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static('public'))
 
-const requiredAuthentication = (req, res, next) =>  {
-  if (req.session.isAuthenticated)  {
-    next();
-  } else {
-    res.render('unauthorised');
-  }
-};
-
-app.use((req, res, next) => {
-  console.log(req.session);
-  next();
-})
+// const requiredAuthentication = (req, res, next) =>  {
+//   if (req.session.isAuthenticated)  {
+//     next();
+//   } else {
+//     res.render('unauthorised');
+//   }
+// };
+//
+// app.use((req, res, next) => {
+//   console.log(req.session);
+//   next();
+// })
 
 
 
@@ -60,6 +63,20 @@ app.use('/register', register);
 app.use('/companies', companies);
 app.use('/notes', notes);
 app.use('/users', users);
+
+app.post('/Company', (req, res) => {
+  console.log('REQ BODY:')
+  console.log(req.body)
+  const comp = new Company(req.body);
+  console.log(comp);
+  comp.save(req.body, (err, result) => {
+    if (err) {
+      return console.log(err);
+    }
+    console.log('saved to database')
+    res.redirect('/')
+  })
+})
 
 app.listen(3000, () => {
   console.log('listening on 3000')
