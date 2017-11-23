@@ -65,11 +65,14 @@ body {
 }
 #new-comp-bg {
   background: #B7295A;
-}#edit-comp-bg {
+}
+#edit-comp-bg {
   background: #42AEAF;
-}#search-bg {
+}
+#search-bg {
   background: #F2AF00;
-}#add-comment-bg {
+}
+#add-comment-bg {
   background: #C1D82F;
 }
 #log-in-bg {

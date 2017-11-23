@@ -11,15 +11,14 @@
   <title></title>
 </head>
 
-<body>
+<body id="search-bg">
   <div id="logo"></div>
-  <div id="search-bg">
-</div>
+
   <form>
 
-  <h2>Search engine</h2>
-  <!-- <select id="myselect" onchange="change_myselect(this.value)"> -->
-  <!-- <option value="">Choose an option:</option>
+    <h2>Search engine</h2>
+    <!-- <select id="myselect" onchange="change_myselect(this.value)"> -->
+    <!-- <option value="">Choose an option:</option>
   <option value="companyName">Company</option>
   <option value="esparkHubLocation">Location</option>
   <option value="primaryMentorFocusArea">Focus Area</option>
@@ -27,21 +26,22 @@
   <option value="salesDistribution">Sales</option>
   <option value="stage">Stage</option>
   <option value="actionOutstanding">Action Needed</option> -->
-  <input id="input" type="text" name="socrates" />
-  <button id="search">Search</button>
-  <!-- </select> -->
-  <div id="result">
+    <input id="input" type="text" name="socrates" />
+    <button id="search">Search</button>
+    <!-- </select> -->
+    <div id="result">
 
-  </div>
+    </div>
   </form>
-    <script>
-      document.getElementById('search').addEventListener('click', function(event){
-        event.preventDefault();
-        const input = document.getElementById('input').value;
-        fetch('/companies/'+input)
+  <script>
+    document.getElementById('search').addEventListener('click', function(event) {
+      event.preventDefault();
+      const input = document.getElementById('input').value;
+      fetch('/companies/' + input)
         .then(response => response.json())
         .then(output => {
-          let toShow = output.map((result, index) => (`<div>
+          let toShow = output.map((result, index) => (
+            `<div>
               <h3><span>#${index}.</span>${result.companyName}</h3>
               <p>
               <span>${result.dateAdded}</span>
@@ -70,42 +70,11 @@
           document.getElementById('result').innerHTML = toShow.join('');
           console.log(toShow);
         });
-      })
- </script>
+    })
+  </script>
 
-    </form>
-    <a href="/main" id="buttonBack" onclick="click()">Back to Main Page</a>
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
+  </form>
+  <a href="/main" id="buttonBack" onclick="click()">Back to Main Page</a>
 
   </div>
 
